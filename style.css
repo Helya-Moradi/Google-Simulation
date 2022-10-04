@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+}
+
+.navbar {
+    /* width: 100%; */
+    height: 8vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 10px;
+}
+
+.gmail,
+.image {
+    margin-left: 10px;
+    cursor: pointer;
+    color: rgb(85, 85, 85);
+    text-decoration: none;
+}
+
+.gmail:hover,
+.image:hover {
+    text-decoration: underline;
+}
+
+.fa-th {
+    cursor: pointer;
+    color: rgb(85, 85, 85);
+    margin-left: 10px;
+}
+
+.fa-th:hover {
+    background-color: #f2f2f2;
+    border-radius: 50%;
+}
+
+.mainContainer {
+    /* margin-top: 40px; */
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    background-image: url(./image/google_logo.svg);
+    width: 272px;
+    height: 92px;
+    margin-bottom: 40px;
+}
+
+.searchBox {
+    width: 550px;
+    box-shadow: 0px 1px 6px 1px #dedcdc;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.searchBox.active {
+    border-radius: 8px;
+}
+
+.searchBox .searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 45px;
+}
+
+.voice-icon {
+    background-image: url(./image/googlemic_clr_24px.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.searchBox input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+
+.searchBox input::placeholder {
+    color: rgb(105, 105, 105);
+}
+
+.searchBox.focus input::placeholder {
+    visibility: hidden;
+}
+
+i {
+    color: rgb(108, 108, 108);
+    padding: 15px;
+}
+
+.searchBox .auto-complete {
+    width: 100%;
+    font-size: 16px;
+    display: none;
+    padding-bottom: 8px;
+}
+
+.searchBox .auto-complete li {
+    list-style: none;
+}
+
+.searchBox .auto-complete li:hover {
+    background-color: rgb(231, 231, 231);
+}
+
+
+.auto-complete li i {
+    font-size: 12px;
+}
+
+.searchBox.active .auto-complete {
+    display: block;
+}
