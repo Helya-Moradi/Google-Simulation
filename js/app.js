@@ -23,7 +23,8 @@ searchInput.addEventListener('keyup', (e) => {
         suggestGenerator(suggestArray);
         if (e.code === 'Enter') {
             location.href = `https://www.google.com/search?q=${searchInputValue}`;
-            searchInputValue = '';
+            searchInput.value = '';
+            wrappContainer.classList.remove('active');
         }
 
     } else {
@@ -53,6 +54,8 @@ function Select() {
             suggestion.push(inputValue);
             searchInput.value = inputValue;
             wrappContainer.classList.remove('active');
+            location.href = `https://www.google.com/search?q=${searchInput.value}`;
+            searchInput.value = '';
         })
     })
 }

@@ -116,6 +116,9 @@ i {
 .searchBox .auto-complete li {
     list-style: none;
 }
+.searchBox .auto-complete li.active {
+    background-color: rgb(160, 0, 0);
+}
 
 .searchBox .auto-complete li:hover {
     background-color: rgb(231, 231, 231);
