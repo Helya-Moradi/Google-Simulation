@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -30,16 +31,16 @@ body {
 }
 
 .menu-item {
-    width: 24px;
-    height: 24px;
+    width: 34px;
+    height: 34px;
     cursor: pointer;
     margin-left: 10px;
-    padding: 8px;
+    padding: 5px;
 }
 
-.menu-item svg {
-    color: #5f6368;
-    opacity: 1;
+.menu-item img {
+    width: 100%;
+    height: 100%;
 }
 
 .menu-item:hover {
@@ -48,8 +49,8 @@ body {
 }
 
 .mainContainer {
-    /* margin-top: 40px; */
-    height: 60vh;
+    margin-top: 90px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,12 +84,15 @@ body {
 
 .voice-icon {
     background-image: url(./image/googlemic_clr_24px.svg);
-    background-repeat: no-repeat;
-    background-position: center;
     width: 24px;
     height: 24px;
-    padding: 15px;
+    padding: 24px;
     cursor: pointer;
+}
+
+.background-pos {
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .searchBox input {
@@ -98,7 +102,6 @@ body {
     outline: none;
     font-size: 16px;
 }
-
 
 .searchBox input::placeholder {
     color: rgb(105, 105, 105);
@@ -122,14 +125,19 @@ i {
 
 .searchBox .auto-complete li {
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .searchBox .auto-complete li.active {
-    background-color: rgb(160, 0, 0);
+    background-color: rgb(231, 231, 231);
 }
 
 .searchBox .auto-complete li:hover {
     background-color: rgb(231, 231, 231);
+}
+.searchBox .auto-complete li:hover .del{
+    display: inline;
 }
 
 
@@ -139,4 +147,91 @@ i {
 
 .searchBox.active .auto-complete {
     display: block;
+}
+
+.del{
+    margin-left: auto;
+    margin-right: 50px;
+    width: 7px;
+    font-size: 14px;
+    color: rgb(108, 108, 108);
+    display: none;
+    cursor: pointer;
+}
+
+.del:hover{
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:768px) {
+    .mainContainer {
+        margin-top: 40px;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        width: 230px;
+        height: 78px;
+    }
+
+    .searchBox {
+        width: 425px;
+    }
+}
+
+@media screen and (max-width:486px) {
+    .navbar {
+        margin: 15px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .gmail,
+    .image {
+        display: none;
+    }
+
+    .mainContainer {
+        margin: 30px 15px;
+    }
+
+    .logo {
+        width: 170px;
+        height: 58px;
+        margin-bottom: 8px;
+    }
+
+    .searchBox {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:368px) {
+    .navbar {
+        margin: 0 15px 0 0;
+    }
+
+    .mainContainer {
+        margin: 20px 15px;
+    }
+
+    .searchBox input::placeholder {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 135px;
+        height: 46px;
+        margin-bottom: 8px;
+    }
+
+    .searchBox {
+        width: 100%;
+    }
+
+    .searchBox .searchContainer {
+        height: 38px;
+    }
 }
