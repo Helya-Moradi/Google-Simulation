@@ -19,7 +19,9 @@ searchInput.addEventListener('keyup', (e) => {
         wrappContainer.classList.add('active');
 
         let newSuggestion = JSON.parse(localStorage.getItem('suggestion'));
-        suggestion = newSuggestion;
+        if (newSuggestion) {
+            suggestion = newSuggestion;
+        }
         let suggestArray = suggestion.filter((word) => {
             return word.toLowerCase().startsWith(searchInputValue.toLocaleLowerCase());
         })
@@ -65,13 +67,22 @@ function Select() {
                 event.target.parentElement.remove();
                 let inputValue = event.target.parentElement.childNodes[1].data;
                 let newSuggestion = JSON.parse(localStorage.getItem('suggestion'));
-                let newsuggestion = newSuggestion.filter(suggest => {
-                    if (suggest != inputValue) {
-                        return suggest;
-                    }
-                })
+                if (newSuggestion) {
+                    let newsuggestion = newSuggestion.filter(suggest => {
+                        if (suggest != inputValue) {
+                            return suggest;
+                        }
+                    })
+                    suggestion = newsuggestion;
+                    
+                } else {
+                    suggestion = suggestion.filter(suggest => {
+                        if (suggest != inputValue) {
+                            return suggest;
+                        }
+                    });
+                }
 
-                suggestion = newsuggestion;
                 localStorage.setItem('suggestion', JSON.stringify(suggestion));
 
 
